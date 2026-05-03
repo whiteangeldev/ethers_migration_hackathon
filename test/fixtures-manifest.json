@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "fixtures": {
+    "complex-01-deep-call-chain.ts": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.hexlify(", "ethers.toUtf8Bytes("],
+      "forbiddenInOutput": ["ethers.utils.hexlify", "ethers.utils.toUtf8Bytes"]
+    },
+    "complex-02-mixed-safe-unsafe-risk.ts": {
+      "autofixTypes": { "utils-to-root": 2, "providers-to-root": 1 },
+      "riskTypeCounts": {
+        "unsafe-utils-member": 1,
+        "dynamic-utils-access": 1,
+        "dynamic-providers-access": 1,
+        "bignumber-usage": 1
+      },
+      "requiredInOutput": ["ethers.parseEther", "ethers.isAddress", "ethers.JsonRpcProvider"],
+      "forbiddenInOutput": ["ethers.utils.parseEther", "ethers.utils.isAddress"]
+    },
+    "complex-03-object-literal-and-array.ts": {
+      "autofixTypes": { "utils-to-root": 5, "providers-to-root": 2 },
+      "riskTypeCounts": {},
+      "forbiddenInOutput": ["ethers.utils."],
+      "requiredInOutput": ["ethers.WebSocketProvider"]
+    },
+    "complex-04-typescript-generics-interfaces.ts": {
+      "autofixTypes": { "providers-to-root": 4, "utils-to-root": 2 },
+      "riskTypeCounts": { "bignumber-usage": 1 },
+      "requiredInOutput": ["ethers.JsonRpcProvider", "ethers.keccak256", "ethers.hexlify"]
+    },
+    "complex-05-jsx-ethers-props.tsx": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.parseUnits", "ethers.parseEther"],
+      "forbiddenInOutput": ["ethers.utils.parseUnits", "ethers.utils.parseEther"]
+    },
+    "complex-06-optional-nullish-flow.ts": {
+      "autofixTypes": { "utils-to-root": 3 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.isAddress", "ethers.hexlify"]
+    },
+    "complex-07-template-and-string-ops.ts": {
+      "autofixTypes": { "utils-to-root": 3 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.concat", "ethers.sha256"]
+    },
+    "complex-08-class-static-instance.ts": {
+      "autofixTypes": {
+        "providers-to-root": 3,
+        "utils-to-root": 1,
+        "utils-rename-v6": 3
+      },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.FallbackProvider", "ethers.JsonRpcProvider", "ethers.getBytes", "ethers.concat"],
+      "forbiddenInOutput": ["ethers.utils.arrayify", "ethers.arrayify"]
+    },
+    "complex-09-async-generators-and-loops.ts": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": { "bignumber-usage": 1 },
+      "requiredInOutput": ["ethers.solidityPacked", "ethers.parseUnits"]
+    },
+    "complex-10-switch-try-catch.ts": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.hexlify", "ethers.id("],
+      "forbiddenInOutput": ["ethers.utils.hexlify", "ethers.utils.id"]
+    },
+    "complex-11-destructuring-alias-partial.ts": {
+      "autofixTypes": { "utils-to-root": 1 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.parseEther"],
+      "requiredStillContains": ["utils.parseEther"]
+    },
+    "complex-12-nested-functions-closures.ts": {
+      "autofixTypes": { "providers-to-root": 2, "utils-to-root": 3 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.AlchemyProvider", "ethers.InfuraProvider", "ethers.keccak256"]
+    },
+    "complex-13-type-assertions-and-satisfies.ts": {
+      "autofixTypes": { "providers-to-root": 3, "utils-to-root": 1 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.JsonRpcProvider", "ethers.isAddress"]
+    },
+    "complex-14-conditional-types-mapped.ts": {
+      "autofixTypes": { "utils-to-root": 3 },
+      "riskTypeCounts": { "unsafe-utils-member": 1, "bignumber-usage": 1 },
+      "requiredInOutput": ["ethers.hexlify", "ethers.toUtf8Bytes"]
+    },
+    "complex-15-bignumber-forest.ts": {
+      "autofixTypes": {},
+      "riskTypeCounts": { "bignumber-usage": 5 },
+      "changed": false
+    },
+    "complex-16-dynamic-only-no-autofix.ts": {
+      "autofixTypes": { "utils-to-root": 1 },
+      "riskTypeCounts": { "dynamic-utils-access": 1, "dynamic-providers-access": 1 },
+      "requiredInOutput": ["ethers.concat"],
+      "forbiddenInOutput": ["ethers.utils[\"concat\"]"]
+    },
+    "complex-17-exported-constants-and-enums.ts": {
+      "autofixTypes": { "utils-to-root": 2, "providers-to-root": 1 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.parseEther", "ethers.parseUnits", "ethers.WebSocketProvider"]
+    },
+    "complex-18-mixed-comments-and-regions.ts": {
+      "autofixTypes": { "utils-to-root": 3 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.keccak256", "ethers.hexlify", "ethers.toUtf8Bytes"]
+    },
+    "complex-19-ethers-in-callback-higher-order.ts": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.hexlify"]
+    },
+    "complex-20-edge-double-property-read.ts": {
+      "autofixTypes": { "utils-to-root": 2 },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.parseEther"],
+      "forbiddenInOutput": ["ethers.utils.parseEther"]
+    },
+    "complex-21-v5-docs-renames.ts": {
+      "autofixTypes": {
+        "constants-to-v6": 2,
+        "utils-rename-v6": 1,
+        "providers-rename-v6": 1
+      },
+      "riskTypeCounts": {},
+      "requiredInOutput": ["ethers.ZeroAddress", "ethers.ZeroHash", "ethers.solidityPacked", "ethers.BrowserProvider"],
+      "forbiddenInOutput": ["ethers.constants.AddressZero", "ethers.utils.solidityPack", "ethers.providers.Web3Provider"]
+    },
+    "complex-22-ts-qualified-types.ts": {
+      "autofixTypes": {
+        "providers-to-root": 1,
+        "utils-to-root": 1,
+        "constants-to-v6": 1
+      },
+      "riskTypeCounts": {},
+      "requiredInOutput": [
+        "ethers.JsonRpcProvider",
+        "ethers.keccak256",
+        "ethers.ZeroAddress"
+      ],
+      "forbiddenInOutput": [
+        "ethers.providers.JsonRpcProvider",
+        "ethers.utils.keccak256",
+        "ethers.constants.AddressZero"
+      ]
+    }
+  }
+}

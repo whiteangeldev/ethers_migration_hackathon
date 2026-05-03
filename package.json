@@ -1,0 +1,26 @@
+{
+  "name": "ethers_migration_hackathon",
+  "version": "1.0.0",
+  "description": "Deterministic ethers v5→v6 codemod + gated AI second pass + migration reports",
+  "main": "src/migrate-pipeline.js",
+  "scripts": {
+    "codemod": "node src/cli.js",
+    "migrate": "node src/migrate-pipeline.js",
+    "migrate:dry": "node src/migrate-pipeline.js --dry",
+    "migrate:demo": "node src/migrate-pipeline.js --target test/fixtures --emit-to test/updates --out-dir migration-report",
+    "ai-fix": "node src/ai-fix-queue.js",
+    "ai-fix:apply": "node src/ai-fix-queue.js --write",
+    "test": "node test/run-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/generator": "^7.29.1",
+    "@babel/parser": "^7.29.3",
+    "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "dotenv": "^17.4.2",
+    "fast-glob": "^3.3.3"
+  }
+}
