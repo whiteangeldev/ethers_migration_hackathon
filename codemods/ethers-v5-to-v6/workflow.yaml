@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/codemod/codemod/refs/heads/main/schemas/workflow.json
+# Runs the hackathon Babel AST codemod against the workflow target directory (cwd).
+version: "1"
+
+nodes:
+  - id: ethers-babel-migrate
+    name: Ethers v5 → v6 (deterministic Babel AST)
+    type: automatic
+    steps:
+      - name: Apply ethers namespace migration
+        run: node "$CODEMOD_PATH/scripts/run-cli.cjs" --target . --out-dir ./migration-report --write

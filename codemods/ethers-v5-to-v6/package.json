@@ -1,0 +1,17 @@
+{
+  "name": "@whiteangeldev/ethers-v5-to-v6",
+  "version": "0.1.0",
+  "description": "Deterministic ethers v5 to v6 API migration (Babel AST)",
+  "private": false,
+  "scripts": {
+    "sync-vendor": "node sync-vendor.js",
+    "prepublishOnly": "node sync-vendor.js"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.29.1",
+    "@babel/parser": "^7.29.3",
+    "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "fast-glob": "^3.3.3"
+  }
+}

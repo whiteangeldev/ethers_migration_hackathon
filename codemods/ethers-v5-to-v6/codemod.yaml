@@ -1,0 +1,30 @@
+schema_version: "1.0"
+
+name: "@whiteangeldev/ethers-v5-to-v6"
+version: "0.1.0"
+description: "Deterministic ethers v5 to v6 API migration (Babel AST)"
+author: "ethers-migration-hackathon <https://github.com>"
+license: "ISC"
+
+targets:
+  languages: ["typescript", "javascript"]
+
+keywords:
+  - upgrade
+  - breaking-change
+  - ethers
+  - v5-to-v6
+  - web3
+
+registry:
+  access: "public"
+  visibility: "public"
+
+# cli.js reads/writes the target tree and migration-report/
+capabilities:
+  - fs
+
+workflows:
+  - name: main
+    default: true
+    path: workflow.yaml
