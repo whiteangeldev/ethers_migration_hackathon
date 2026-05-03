@@ -67,15 +67,3 @@ npm test
 ```
 
 Fixtures and expectations live in `test/fixtures/` and `test/fixtures-manifest.json`.
-
-## Hackathon submission
-
-1. `npm test` passes.
-2. Do not commit `.env` (use `.env.example`).
-3. Run `migrate` or `migrate:dry` on a real clone; keep the target project’s tests green.
-4. Zip or attach **`migration-report/pipeline-summary.md`** plus `report.md` / `ai-fix-report.jsonl` if AI ran.
-
-## Notes
-
-- **TypeScript:** `typeof ethers.providers.X` via `TSQualifiedName` is migrated like value paths.
-- **429 / quota:** OpenAI billing limits, not a bug in the pipeline.
